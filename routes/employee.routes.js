@@ -23,10 +23,11 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+
 });
 
 // POST new employee
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
   try {
     const employee = new Employee(req.body);
     const savedEmployee = await employee.save();
